@@ -82,13 +82,12 @@ namespace test003
             txt_hexagon.SelectAll();
             */
 
-            string result = hexagon_test();  
-            if (result != null)
-            {
-                lblshow_hexagon.Text = result;
+            double result = hexagon_test();  
+ 
+                lblshow_hexagon.Text = "พื้นที่หกเหลี่ยม คือ "+ result;
                 txt_hexagon.Focus();
                 txt_hexagon.SelectAll();
-            }
+ 
 
         }
 
@@ -139,7 +138,7 @@ namespace test003
             txt_triangle2.SelectAll();
         }
 
-        private string hexagon_test()
+        private double hexagon_test()
         {
             double a1 = 0;
             if (double.TryParse(txt_hexagon.Text, out a1) == false)
@@ -153,7 +152,7 @@ namespace test003
             double a3 = (3 * Math.Sqrt(3) / 2) * Math.Pow(a1, 2);
 
 
-            return "พื้นที่หกเหลี่ยม คือ " + a3.ToString();
+            return  a3;
         }
 
 
